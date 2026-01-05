@@ -66,7 +66,7 @@
 }
 
 .resizer {
-  width: 16px; /* Increased width for better visibility and grab area */
+  width: 5px; /* Increased width for better visibility and grab area */
   margin: 0 5px; /* Add margin to separate panels */
   background-color: #e0e0e0; /* Slightly darker for visibility */
   cursor: col-resize;

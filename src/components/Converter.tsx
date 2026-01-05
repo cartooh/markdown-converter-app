@@ -91,13 +91,13 @@ const Converter: React.FC = () => {
                 <MarkdownInput 
                     value={markdown} 
                     onChange={handleMarkdownChange} 
-                    style={{ width: `${leftPanelWidth}%`, flex: 'none' }}
+                    style={{ width: `${leftPanelWidth}%`, flex: '0 1 auto' }}
                 />
                 <div className="resizer" onMouseDown={handleMouseDown} />
                 <RichTextOutput 
                     value={html} 
                     onChange={handleHtmlChange} 
-                    style={{ width: `${100 - leftPanelWidth}%`, flex: 'none' }}
+                    style={{ width: `${100 - leftPanelWidth}%`, flex: '0 1 auto' }}
                 />
             </div>
         </div>
