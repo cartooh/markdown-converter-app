@@ -96,11 +96,39 @@
 
 .markdown-input-container h3,
 .rich-text-output-container h3 {
-  margin-top: 0;
-  margin-bottom: 10px;
+  margin: 0;
   text-align: left;
   color: #333;
   font-size: 1.1rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.editor-toolbar {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.editor-toolbar button {
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  min-width: 24px;
+}
+
+.editor-toolbar button:hover {
+  background-color: #e2e6ea;
 }
 
 .markdown-input {
@@ -168,4 +196,27 @@
     padding: 10px;
     border-radius: 4px;
     overflow-x: auto;
+}
+
+/* Table Styles for Rich Text Output */
+.rich-text-output table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.rich-text-output th,
+.rich-text-output td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.rich-text-output th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.rich-text-output tr:nth-child(even) {
+    background-color: #f9f9f9;
 }

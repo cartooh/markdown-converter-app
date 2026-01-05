@@ -6,6 +6,7 @@ const turndownService = new TurndownService({
     codeBlockStyle: 'fenced'
 });
 
+// Use GFM plugin for tables and other GFM features
 turndownService.use(gfm);
 
 export const htmlToMarkdown = (html: string): string => {
