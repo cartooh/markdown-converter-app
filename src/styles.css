@@ -57,14 +57,33 @@
 
 .panels-container {
   display: flex;
-  gap: 20px;
+  /* gap: 20px;  Remove gap to make resizer work smoothly */
   flex: 1;
   min-height: 0; /* Important for nested flex scrolling */
+  position: relative;
+}
+
+.resizer {
+  width: 16px; /* Increased width for better visibility and grab area */
+  margin: 0 5px; /* Add margin to separate panels */
+  background-color: #e0e0e0; /* Slightly darker for visibility */
+  cursor: col-resize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+  z-index: 10;
+  border-radius: 4px; /* Rounded corners */
+}
+
+.resizer:hover,
+.resizer:active {
+  background-color: #007bff;
 }
 
 .markdown-input-container,
 .rich-text-output-container {
-  flex: 1;
+  /* flex: 1;  Removed flex: 1 because width is controlled by JS */
   display: flex;
   flex-direction: column;
   border: 1px solid #ddd;
@@ -72,6 +91,7 @@
   padding: 15px;
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  overflow: hidden; /* Ensure content doesn't overflow during resize */
 }
 
 .markdown-input-container h3,
