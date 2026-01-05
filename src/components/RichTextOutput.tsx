@@ -3,9 +3,10 @@ import React, { useEffect, useRef } from 'react';
 interface RichTextOutputProps {
     value: string;
     onChange: (value: string) => void;
+    style?: React.CSSProperties;
 }
 
-const RichTextOutput: React.FC<RichTextOutputProps> = ({ value, onChange }) => {
+const RichTextOutput: React.FC<RichTextOutputProps> = ({ value, onChange, style }) => {
     const contentEditableRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -23,7 +24,7 @@ const RichTextOutput: React.FC<RichTextOutputProps> = ({ value, onChange }) => {
     };
 
     return (
-        <div className="rich-text-output-container">
+        <div className="rich-text-output-container" style={style}>
             <h3>Rich Text Output (Editable)</h3>
             <div
                 className="rich-text-output"

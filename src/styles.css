@@ -13,16 +13,31 @@
   flex-direction: column;
   gap: 20px;
   flex: 1;
-  max-width: 1400px;
   margin: 0 auto;
   width: 100%;
+  transition: max-width 0.3s ease;
+}
+
+.converter.constrained-width {
+  max-width: 1400px;
+}
+
+.converter.full-width {
+  max-width: 100%;
+  padding: 0 20px;
 }
 
 .toolbar {
   display: flex;
-  gap: 10px;
-  justify-content: center;
+  gap: 20px;
+  justify-content: space-between;
   margin-bottom: 10px;
+  align-items: center;
+}
+
+.toolbar-group {
+  display: flex;
+  gap: 10px;
 }
 
 .toolbar button {

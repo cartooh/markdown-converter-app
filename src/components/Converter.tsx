@@ -9,6 +9,7 @@ const Converter: React.FC = () => {
     const [markdown, setMarkdown] = useState<string>('');
     const [html, setHtml] = useState<string>('');
     const [lastEdited, setLastEdited] = useState<'markdown' | 'html'>('markdown');
+    const [isFullWidth, setIsFullWidth] = useState<boolean>(false);
 
     useEffect(() => {
         if (lastEdited === 'markdown') {
@@ -56,8 +57,13 @@ const Converter: React.FC = () => {
     };
 
     return (
-        <div className="converter">
-            <Toolbar onCopyMarkdown={handleCopyMarkdown} onCopyHtml={handleCopyHtml} />
+        <div className={`converter ${isFullWidth ? 'full-width' : 'constrained-width'}`}>
+            <Toolbar 
+                onCopyMarkdown={handleCopyMarkdown} 
+                onCopyHtml={handleCopyHtml}
+                isFullWidth={isFullWidth}
+                onToggleFullWidth={() => setIsFullWidth(!isFullWidth)}
+            />
             <div className="panels-container">
                 <MarkdownInput value={markdown} onChange={handleMarkdownChange} />
                 <RichTextOutput value={html} onChange={handleHtmlChange} />
