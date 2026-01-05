@@ -6,6 +6,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  overflow: hidden; /* Prevent window scrollbar */
 }
 
 .converter {
@@ -16,6 +17,7 @@
   margin: 0 auto;
   width: 100%;
   transition: max-width 0.3s ease;
+  min-height: 0; /* Allow shrinking */
 }
 
 .converter.constrained-width {
@@ -142,6 +144,7 @@
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+  min-height: 0; /* Allow shrinking for scroll */
 }
 
 .markdown-input:focus {
@@ -160,6 +163,7 @@
   overflow-y: auto;
   outline: none;
   line-height: 1.6;
+  min-height: 0; /* Allow shrinking for scroll */
 }
 
 .rich-text-output:focus {
